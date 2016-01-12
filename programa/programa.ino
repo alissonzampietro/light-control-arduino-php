@@ -1,16 +1,16 @@
-int ledPin13 =  13;
-int ledPin11 =  11;
-int ledPin9  =  9;
-int ledPin7  =  7;
+int azul     =  7,flagAzul = 0;
+int amarelo  =  8,flagAmarelo = 0;
+int verde    =  9,flagVerde = 0;
+int vermelho =  10,flagVermelho = 0;
  
 void setup()   {
  
   Serial.begin(9600);
  
-  pinMode(ledPin13, OUTPUT);
-  pinMode(ledPin11, OUTPUT);
-  pinMode(ledPin9, OUTPUT);
-  pinMode(ledPin7, OUTPUT);
+  pinMode(azul, OUTPUT);
+  pinMode(amarelo, OUTPUT);
+  pinMode(verde, OUTPUT);
+  pinMode(vermelho, OUTPUT);
  
 }
  
@@ -18,29 +18,45 @@ void loop()
 {
   char caracter;
   caracter = Serial.read();
-  //se pressionado "v" liga o led verde
-  if(caracter == 'v')
-  {
-      digitalWrite(ledPin13, HIGH);
+  Serial.println(caracter);
+
+  switch(caracter){
+     case 'b':
+       if(flagAzul == 0){
+         digitalWrite(azul,HIGH);
+         flagAzul = 1;
+       }else{
+         digitalWrite(azul,LOW);
+         flagAzul = 0;
+       }
+     break;
+     case 'y':
+       if(flagAmarelo == 0){
+         digitalWrite(amarelo,HIGH);
+         flagAmarelo = 1;
+       }else{
+         digitalWrite(amarelo,LOW);
+         flagAmarelo = 0;
+       }
+     break;
+     case 'g':
+       if(flagVerde == 0){
+         digitalWrite(verde,HIGH);
+         flagVerde = 1;
+       }else{
+         digitalWrite(verde,LOW);
+         flagVerde = 0;
+       }
+     break;
+     case 'r':
+       if(flagVermelho == 0){
+         digitalWrite(vermelho,HIGH);
+         flagVermelho = 1;
+       }else{
+         digitalWrite(vermelho,LOW);
+         flagVermelho = 0;
+       }
+     break;
   }
-  else
-    //Se pressionado "z" liga o led azul
-    if(caracter == 'z')
-    {
-         digitalWrite(ledPin11, HIGH);
-    }
-    else
-      //S pressionado "l" liga o led laranja
-      if(caracter == 'l')
-      {
-         digitalWrite(ledPin9, HIGH);
-      }
-      else
-        //Se pressionado "a" liga o led amarelo
-        if(caracter == 'a')
-        {
-            digitalWrite(ledPin7, HIGH);
-        }
- 
-  delay(1000);
+  delay(500);
 }

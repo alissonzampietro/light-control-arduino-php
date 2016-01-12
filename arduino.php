@@ -1,25 +1,21 @@
 <?php
- 
-$port = fopen("/dev/ttyUSB0", "w");
-if ($_POST['estado']=="Amarelo")
-{
-    echo "Ligou o Amarelo";
-    fwrite($port, "a");
-}
-    if ($_POST['estado']=="Azul")
-    {
-        echo "Ligou o Azul";
-        fwrite($port, "z");
-    }
-        if ($_POST['estado']=="Laranja")
-        {
-            echo "Ligou o Laranja";
-            fwrite($port, "l");
+
+if(isset($_POST['cor'])){
+    $port = fopen("/dev/ttyACM0", "w");
+        switch($_POST['cor']){
+            case "azul":
+            fwrite($port, "b");
+            break;
+            case "amarelo":
+            fwrite($port, "y");
+            break;
+            case "verde":
+            fwrite($port, "g");
+            break;
+            case "vermelho":
+            fwrite($port, "r");
+            break;
         }
-            if ($_POST['estado']=="Verde")
-            {
-                echo "Ligou o Verde";
-                fwrite($port, "v");
-            }
-fclose($port);
+    fclose($port);
+}
 ?>

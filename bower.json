@@ -1,0 +1,25 @@
+{
+  "name": "Arduino com PHP",
+  "version": "0.0.1",
+  "homepage": "https://github.com/alissonzampietro/arduino_php",
+  "authors": [
+    "Alisson Zampietro <alisson@mentesnotaveis.com.br>"
+  ],
+  "description": "Sistema que realiza a comunicação do PHP com Arduíno",
+  "main": "index.php",
+  "keywords": [
+    "arduino",
+    "php"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.0"
+  }
+}

@@ -18,8 +18,17 @@
     </head>
     <body>
         <section class="main">
-            <h1>Painel de controle de Luz</h1>
-
+            <?php 
+                $ativo = 0;
+                if(@fopen('/dev/ttyACM0', "w")!=FALSE){
+                    $ativo = 1;
+                    $titulo = "Painel de controle de Luz";
+                }else{
+                    $titulo = "Não identificamos seu arduíno";
+                }
+            ?>
+            <h1><?php echo $titulo ?></h1>
+            <?php if($ativo!=0){ ?>
             <div class="luz">
                 <p class="title vermelho">Vermelho</p>
                 <div class="onoffswitch">
@@ -63,7 +72,7 @@
                     </label>
                 </div>
             </div>
-
+        <?php } ?>
         </section>
        
     </body>

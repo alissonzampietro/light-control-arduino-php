@@ -17,6 +17,7 @@ Simples controlador remoto utilizando [Arduíno](https://www.arduino.cc/) com [P
 Para quem estiver usando Windows, pode baixar o [WAMP](http://www.baixaki.com.br/download/wamp5.htm) ou o [XAMMP](http://www.baixaki.com.br/download/xampp.htm)
 
 #Recursos físicos
+![Esquema](https://raw.githubusercontent.com/alissonzampietro/arduino_php/master/assets/imagens/esquema.jpg)
 * [Placa Arduíno](http://lista.mercadolivre.com.br/arduino#D[A:arduino])
 * [Jumpers](http://lista.mercadolivre.com.br/jumpers#D[A:jumpers])
 * LEDs

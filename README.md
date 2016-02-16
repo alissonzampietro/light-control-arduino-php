@@ -1,6 +1,6 @@
 #Controlador remoto de LEDS utilizando PHP, AJAX e Arduino 
 
-![Demo](https://github.com/alissonzampietro/arduino_php/tree/master/assets/imagens/layout.jpg)
+![Demo](https://raw.githubusercontent.com/alissonzampietro/arduino_php/master/assets/imagens/layout.jpg)
 
 ## Descrição
 
